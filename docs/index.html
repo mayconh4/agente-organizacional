@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SalesOps AI — Painel de Operações</title>
+  <meta name="description" content="Painel diário de operações comerciais multicanal: saúde, alertas, métricas e ações." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">📊</span>
+      <div>
+        <h1>SalesOps AI</h1>
+        <p class="tagline">Operações comerciais multicanal</p>
+      </div>
+    </div>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <main id="app">
+    <div class="loading" id="loading">Carregando relatório…</div>
+  </main>
+
+  <footer class="footer">
+    <p>Gerado pelo agente SalesOps AI · os dados deste painel são produzidos pelo
+       agente Python (Claude + APIs dos marketplaces) e publicados como arquivo estático.</p>
+  </footer>
+
+  <template id="tpl-dashboard">
+    <section class="hero">
+      <div class="health-card">
+        <div class="gauge" id="gauge">
+          <span class="gauge-value" id="health-value">--</span>
+          <span class="gauge-label">saúde operacional</span>
+        </div>
+      </div>
+      <div class="channels" id="channels"></div>
+    </section>
+
+    <section class="kpis" id="kpis"></section>
+
+    <section class="grid-2">
+      <div class="panel">
+        <h2>🚨 Alertas críticos</h2>
+        <ul class="alerts" id="alerts"></ul>
+      </div>
+      <div class="panel">
+        <h2>📈 Oportunidades</h2>
+        <ul class="ops" id="ops"></ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>📋 Ações recomendadas hoje</h2>
+      <div class="actions" id="actions"></div>
+    </section>
+
+    <section class="panel">
+      <h2>📑 Métricas por canal</h2>
+      <div class="table-wrap"><table class="metrics" id="metrics"></table></div>
+    </section>
+
+    <section class="panel">
+      <h2>🧠 Relatório executivo</h2>
+      <div class="report" id="report"></div>
+    </section>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>

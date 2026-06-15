@@ -28,6 +28,7 @@ class RunResult:
     report_path: str
     engine: str                       # "claude" | "regras"
     health: int
+    context: dict = field(default_factory=dict)   # dados estruturados (p/ web)
     sample_channels: list[str] = field(default_factory=list)
     failed_channels: list[str] = field(default_factory=list)
 
@@ -98,6 +99,7 @@ def run_daily(settings: Settings, day: str | None = None) -> RunResult:
         report_path=report_path,
         engine=engine,
         health=health,
+        context=context,
         sample_channels=sample_channels,
         failed_channels=failed_channels,
     )

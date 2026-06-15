@@ -48,6 +48,31 @@ def _cmd_run(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_build_web(args: argparse.Namespace) -> int:
+    from .brain import run_daily
+    from .web import export_web
+
+    settings = get_settings()
+    if args.client:
+        settings.client_name = args.client
+    if args.channels:
+        settings.channels = [c.strip() for c in args.channels.split(",") if c.strip()]
+
+    print(f"▶ Gerando painel de '{settings.client_name}'…", file=sys.stderr)
+    result = run_daily(settings, day=args.date)
+    path = export_web(settings, result, out_dir=args.out)
+
+    motor = "Claude" if result.engine == "claude" else "regras (offline)"
+    print(f"✔ Dados do painel salvos em: {path}", file=sys.stderr)
+    print(f"— Motor: {motor} | Saúde: {result.health}%", file=sys.stderr)
+    if result.sample_channels:
+        labels = ", ".join(Channel.label(c) for c in result.sample_channels)
+        print(f"— ℹ️ Canais com dados de exemplo: {labels}", file=sys.stderr)
+    print(f"\nPré-visualize localmente:  python -m http.server -d {args.out}",
+          file=sys.stderr)
+    return 0
+
+
 def _cmd_log_action(args: argparse.Namespace) -> int:
     settings = get_settings()
     if args.client:
@@ -86,6 +111,13 @@ def build_parser() -> argparse.ArgumentParser:
                      help="Data a analisar (YYYY-MM-DD). Padrão: hoje.")
     run.add_argument("--channels", help="Canais (csv). Padrão: do .env.")
     run.set_defaults(func=_cmd_run)
+
+    web = sub.add_parser("build-web", help="Gera os dados do painel web (docs/report.json).")
+    web.add_argument("--date", default=date.today().isoformat(),
+                     help="Data a analisar (YYYY-MM-DD). Padrão: hoje.")
+    web.add_argument("--channels", help="Canais (csv). Padrão: do .env.")
+    web.add_argument("--out", default="docs", help="Diretório do painel. Padrão: docs.")
+    web.set_defaults(func=_cmd_build_web)
 
     log = sub.add_parser("log-action", help="Registra uma ação tomada.")
     log.add_argument("description", help="Descrição da ação.")

@@ -73,6 +73,42 @@ O relatório é impresso no terminal e salvo em
 
 ---
 
+## Painel web (GitHub Pages)
+
+O agente tem um **painel web estático** em `docs/` que roda no GitHub Pages —
+igual a um site comum. Como o GitHub Pages só serve arquivos estáticos, o
+"cérebro" Python **não roda no navegador**: ele gera um `docs/report.json` que
+o painel lê. Esses dados são produzidos pelo agente (na sua máquina ou via
+GitHub Actions) e publicados como arquivo estático.
+
+```bash
+# Gera/atualiza os dados do painel
+python run.py build-web
+
+# Pré-visualiza localmente
+python -m http.server -d docs
+# abra http://localhost:8000
+```
+
+### Publicar no GitHub Pages (automático)
+
+1. Faça merge desta branch na `main`.
+2. No GitHub: **Settings → Pages → Source: GitHub Actions**.
+3. (Opcional) Em **Settings → Secrets and variables → Actions**, cadastre as
+   credenciais como *secrets* (`ANTHROPIC_API_KEY`, `ML_ACCESS_TOKEN`, etc.) e
+   o nome do cliente como *variable* (`SALESOPS_CLIENT`).
+
+O workflow `.github/workflows/pages.yml` roda o agente (todo dia às 8h UTC, ou
+manualmente) e publica o painel em `https://<usuário>.github.io/agente-organizacional/`.
+Sem credenciais, ele publica com **dados de exemplo**; com credenciais, com
+**dados reais + diagnóstico do Claude**.
+
+> Por que não roda 100% no Pages como o outro site? Porque este agente precisa
+> de um backend (Python) e de chaves secretas — que não podem ficar no
+> navegador. O GitHub Actions faz o papel desse backend e publica o resultado.
+
+---
+
 ## Configuração (.env)
 
 | Variável | Para quê |
