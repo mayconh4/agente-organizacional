@@ -1,0 +1,22 @@
+# Credenciais e segredos
+.env
+.env.local
+
+# Dados gerados em runtime (histórico de snapshots e relatórios)
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
