@@ -1,0 +1,328 @@
+{
+  "generated_at": "2026-06-15T00:17:36+00:00",
+  "client": "Loja XPTO",
+  "date": "2026-06-15",
+  "engine": "regras",
+  "health": 69,
+  "channel_health": {
+    "Shopee": 60,
+    "Mercado Livre": 73,
+    "Amazon": 73
+  },
+  "channels_analyzed": [
+    "Shopee",
+    "Mercado Livre",
+    "Amazon"
+  ],
+  "metrics": [
+    {
+      "name": "receita",
+      "label": "Receita",
+      "channel": "shopee",
+      "value": 1277.16,
+      "unit": "R$",
+      "previous": 1008.0,
+      "delta_pct": 26.7,
+      "trend": "subindo"
+    },
+    {
+      "name": "pedidos",
+      "label": "Pedidos",
+      "channel": "shopee",
+      "value": 29,
+      "unit": "un",
+      "previous": 21,
+      "delta_pct": 38.1,
+      "trend": "subindo"
+    },
+    {
+      "name": "ticket_medio",
+      "label": "Ticket médio",
+      "channel": "shopee",
+      "value": 44.04,
+      "unit": "R$",
+      "previous": 48.0,
+      "delta_pct": -8.3,
+      "trend": "caindo"
+    },
+    {
+      "name": "investimento_ads",
+      "label": "Investimento Ads",
+      "channel": "shopee",
+      "value": 76.56,
+      "unit": "R$",
+      "previous": 82.56,
+      "delta_pct": -7.3,
+      "trend": "caindo"
+    },
+    {
+      "name": "roas",
+      "label": "ROAS",
+      "channel": "shopee",
+      "value": 8.79,
+      "unit": "x",
+      "previous": 8.12,
+      "delta_pct": 8.3,
+      "trend": "subindo"
+    },
+    {
+      "name": "receita",
+      "label": "Receita",
+      "channel": "mercado_livre",
+      "value": 2418.9,
+      "unit": "R$",
+      "previous": 2129.0,
+      "delta_pct": 13.6,
+      "trend": "subindo"
+    },
+    {
+      "name": "pedidos",
+      "label": "Pedidos",
+      "channel": "mercado_livre",
+      "value": 11,
+      "unit": "un",
+      "previous": 10,
+      "delta_pct": 10.0,
+      "trend": "subindo"
+    },
+    {
+      "name": "ticket_medio",
+      "label": "Ticket médio",
+      "channel": "mercado_livre",
+      "value": 219.9,
+      "unit": "R$",
+      "previous": 212.9,
+      "delta_pct": 3.3,
+      "trend": "subindo"
+    },
+    {
+      "name": "investimento_ads",
+      "label": "Investimento Ads",
+      "channel": "mercado_livre",
+      "value": 144.48,
+      "unit": "R$",
+      "previous": 162.4,
+      "delta_pct": -11.0,
+      "trend": "caindo"
+    },
+    {
+      "name": "roas",
+      "label": "ROAS",
+      "channel": "mercado_livre",
+      "value": 31.91,
+      "unit": "x",
+      "previous": 19.65,
+      "delta_pct": 62.4,
+      "trend": "subindo"
+    },
+    {
+      "name": "receita",
+      "label": "Receita",
+      "channel": "amazon",
+      "value": 2279.4,
+      "unit": "R$",
+      "previous": 2339.4,
+      "delta_pct": -2.6,
+      "trend": "caindo"
+    },
+    {
+      "name": "pedidos",
+      "label": "Pedidos",
+      "channel": "amazon",
+      "value": 6,
+      "unit": "un",
+      "previous": 6,
+      "delta_pct": 0.0,
+      "trend": "estável"
+    },
+    {
+      "name": "ticket_medio",
+      "label": "Ticket médio",
+      "channel": "amazon",
+      "value": 379.9,
+      "unit": "R$",
+      "previous": 389.9,
+      "delta_pct": -2.6,
+      "trend": "caindo"
+    },
+    {
+      "name": "investimento_ads",
+      "label": "Investimento Ads",
+      "channel": "amazon",
+      "value": 229.06,
+      "unit": "R$",
+      "previous": 239.72,
+      "delta_pct": -4.4,
+      "trend": "caindo"
+    },
+    {
+      "name": "roas",
+      "label": "ROAS",
+      "channel": "amazon",
+      "value": 11.02,
+      "unit": "x",
+      "previous": 11.47,
+      "delta_pct": -3.9,
+      "trend": "caindo"
+    },
+    {
+      "name": "receita",
+      "label": "Receita total",
+      "channel": "geral",
+      "value": 5975.46,
+      "unit": "R$",
+      "previous": 5476.4,
+      "delta_pct": 9.1,
+      "trend": "subindo"
+    },
+    {
+      "name": "pedidos",
+      "label": "Pedidos",
+      "channel": "geral",
+      "value": 46.0,
+      "unit": "un",
+      "previous": 37.0,
+      "delta_pct": 24.3,
+      "trend": "subindo"
+    },
+    {
+      "name": "unidades",
+      "label": "Unidades vendidas",
+      "channel": "geral",
+      "value": 46.0,
+      "unit": "un",
+      "previous": 37.0,
+      "delta_pct": 24.3,
+      "trend": "subindo"
+    },
+    {
+      "name": "ticket_medio",
+      "label": "Ticket médio",
+      "channel": "geral",
+      "value": 129.9,
+      "unit": "R$",
+      "previous": 148.01,
+      "delta_pct": -12.2,
+      "trend": "caindo"
+    },
+    {
+      "name": "investimento_ads",
+      "label": "Investimento Ads",
+      "channel": "geral",
+      "value": 450.1,
+      "unit": "R$",
+      "previous": 484.68,
+      "delta_pct": -7.1,
+      "trend": "caindo"
+    },
+    {
+      "name": "roas",
+      "label": "ROAS",
+      "channel": "geral",
+      "value": 17.35,
+      "unit": "x",
+      "previous": 13.64,
+      "delta_pct": 27.2,
+      "trend": "subindo"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "critica",
+      "channel": "shopee",
+      "area": "estoque",
+      "entity": "SHP-001",
+      "message": "'Fone Bluetooth XYZ Pro' está ativo com estoque zerado.",
+      "recommendation": "Repor estoque ou pausar para não perder posicionamento."
+    },
+    {
+      "severity": "critica",
+      "channel": "amazon",
+      "area": "anúncio",
+      "entity": "AMZ-2001",
+      "message": "Buy Box perdida em 'Liquidificador Power 1200W 12 velocidades'.",
+      "recommendation": "Revisar preço vs. concorrência e condições de frete/prazo."
+    },
+    {
+      "severity": "alta",
+      "channel": "shopee",
+      "area": "anúncio",
+      "entity": "SHP-002",
+      "message": "'fone' está sem foto principal.",
+      "recommendation": "Subir ao menos 1 imagem em fundo branco de boa resolução."
+    },
+    {
+      "severity": "alta",
+      "channel": "mercado_livre",
+      "area": "conta",
+      "entity": "conta",
+      "message": "Reputação da conta está amarelo.",
+      "recommendation": "Revisar cancelamentos, atrasos e reclamações recentes."
+    },
+    {
+      "severity": "alta",
+      "channel": "mercado_livre",
+      "area": "conta",
+      "entity": "conta",
+      "message": "Taxa de atraso em 8.6% (acima do limite de 5%).",
+      "recommendation": "Acelerar expedição e revisar prazos de manuseio."
+    },
+    {
+      "severity": "alta",
+      "channel": "mercado_livre",
+      "area": "atendimento",
+      "entity": "conta",
+      "message": "14 pergunta(s) sem resposta.",
+      "recommendation": "Responder hoje — perguntas em aberto derrubam conversão."
+    },
+    {
+      "severity": "alta",
+      "channel": "amazon",
+      "area": "reputação",
+      "entity": "AMZ-2002",
+      "message": "'Air Fryer Digital 5L Premium' com avaliação baixa (3.4).",
+      "recommendation": "Investigar reviews negativas recentes e atacar a causa."
+    },
+    {
+      "severity": "media",
+      "channel": "shopee",
+      "area": "atendimento",
+      "entity": "conta",
+      "message": "2 pergunta(s) sem resposta.",
+      "recommendation": "Responder hoje — perguntas em aberto derrubam conversão."
+    },
+    {
+      "severity": "media",
+      "channel": "shopee",
+      "area": "anúncio",
+      "entity": "SHP-002",
+      "message": "Título fraco/curto: 'fone'.",
+      "recommendation": "Reescrever com marca, modelo e atributos buscados."
+    },
+    {
+      "severity": "media",
+      "channel": "shopee",
+      "area": "anúncio",
+      "entity": "SHP-004",
+      "message": "'Cabo HDMI 2.1 8K 2m' está pausado.",
+      "recommendation": "Confirmar se a pausa é intencional; reativar se possível."
+    },
+    {
+      "severity": "baixa",
+      "channel": "shopee",
+      "area": "anúncio",
+      "entity": "SHP-002",
+      "message": "Descrição curta em 'fone' (80 caracteres).",
+      "recommendation": "Detalhar benefícios, medidas e dúvidas frequentes."
+    }
+  ],
+  "anomalies": [],
+  "actions_recent": [],
+  "report_markdown": "# Relatório diário — 2026-06-15\n**Cliente:** Loja XPTO\n\n## Situação geral\nSaúde operacional: **69%**.\nPor canal — Shopee: 60%, Mercado Livre: 73%, Amazon: 73%.\nReceita do dia: **R$ 5,975.46 (▲ +9% vs. ontem)**.\n\n## 🚨 Alertas críticos\n- 🔴 Crítico [Shopee] 'Fone Bluetooth XYZ Pro' está ativo com estoque zerado.\n- 🔴 Crítico [Amazon] Buy Box perdida em 'Liquidificador Power 1200W 12 velocidades'.\n- 🟠 Alta [Shopee] 'fone' está sem foto principal.\n- 🟠 Alta [Mercado Livre] Reputação da conta está amarelo.\n- 🟠 Alta [Mercado Livre] Taxa de atraso em 8.6% (acima do limite de 5%).\n- 🟠 Alta [Mercado Livre] 14 pergunta(s) sem resposta.\n- 🟠 Alta [Amazon] 'Air Fryer Digital 5L Premium' com avaliação baixa (3.4).\n\n## 📈 Oportunidades\n- Pedidos 46 un (▲ +24% vs. ontem) — considere escalar o que puxou.\n- Unidades vendidas 46 un (▲ +24% vs. ontem) — considere escalar o que puxou.\n- ROAS 17.35x (▲ +27% vs. ontem) — considere escalar o que puxou.\n\n## 🔍 Diagnóstico e hipóteses\n- Sem anomalias relevantes vs. o dia anterior.\n\n## ✅ Ações recomendadas hoje\n**Prioridade alta**\n- [Shopee] Repor estoque ou pausar para não perder posicionamento.\n- [Amazon] Revisar preço vs. concorrência e condições de frete/prazo.\n- [Shopee] Subir ao menos 1 imagem em fundo branco de boa resolução.\n- [Mercado Livre] Revisar cancelamentos, atrasos e reclamações recentes.\n- [Mercado Livre] Acelerar expedição e revisar prazos de manuseio.\n- [Mercado Livre] Responder hoje — perguntas em aberto derrubam conversão.\n- [Amazon] Investigar reviews negativas recentes e atacar a causa.\n\n**Prioridade média**\n- [Shopee] Responder hoje — perguntas em aberto derrubam conversão.\n- [Shopee] Reescrever com marca, modelo e atributos buscados.\n- [Shopee] Confirmar se a pausa é intencional; reativar se possível.\n\n**Prioridade baixa**\n- [Shopee] Detalhar benefícios, medidas e dúvidas frequentes.",
+  "sample_channels": [
+    "shopee",
+    "mercado_livre",
+    "amazon"
+  ],
+  "failed_channels": []
+}

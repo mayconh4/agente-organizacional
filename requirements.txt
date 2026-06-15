@@ -1,0 +1,8 @@
+# Cérebro do agente (geração do relatório executivo)
+anthropic>=0.49
+
+# Integração real com as APIs dos marketplaces
+requests>=2.31
+
+# Carregamento de credenciais a partir do arquivo .env
+python-dotenv>=1.0
