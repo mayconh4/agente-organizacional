@@ -23,9 +23,10 @@ TIMEOUT = 20
 class MercadoLivreConnector(Connector):
     channel = "mercado_livre"
 
-    def __init__(self) -> None:
-        self.token = os.getenv("ML_ACCESS_TOKEN", "").strip()
-        self.seller_id = os.getenv("ML_SELLER_ID", "").strip()
+    def __init__(self, access_token: str | None = None,
+                 seller_id: str | None = None) -> None:
+        self.token = (access_token or os.getenv("ML_ACCESS_TOKEN", "")).strip()
+        self.seller_id = (seller_id or os.getenv("ML_SELLER_ID", "")).strip()
 
     def is_configured(self) -> bool:
         return bool(self.token)

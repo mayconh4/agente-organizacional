@@ -27,12 +27,15 @@ TIMEOUT = 20
 class ShopeeConnector(Connector):
     channel = "shopee"
 
-    def __init__(self) -> None:
-        self.partner_id = os.getenv("SHOPEE_PARTNER_ID", "").strip()
-        self.partner_key = os.getenv("SHOPEE_PARTNER_KEY", "").strip()
-        self.shop_id = os.getenv("SHOPEE_SHOP_ID", "").strip()
-        self.access_token = os.getenv("SHOPEE_ACCESS_TOKEN", "").strip()
-        self.host = os.getenv("SHOPEE_HOST", "https://partner.shopeemobile.com").strip()
+    def __init__(self, partner_id: str | None = None, partner_key: str | None = None,
+                 shop_id: str | None = None, access_token: str | None = None,
+                 host: str | None = None) -> None:
+        self.partner_id = (partner_id or os.getenv("SHOPEE_PARTNER_ID", "")).strip()
+        self.partner_key = (partner_key or os.getenv("SHOPEE_PARTNER_KEY", "")).strip()
+        self.shop_id = (shop_id or os.getenv("SHOPEE_SHOP_ID", "")).strip()
+        self.access_token = (access_token or os.getenv("SHOPEE_ACCESS_TOKEN", "")).strip()
+        self.host = (host or os.getenv("SHOPEE_HOST",
+                     "https://partner.shopeemobile.com")).strip()
 
     def is_configured(self) -> bool:
         return all([self.partner_id, self.partner_key, self.shop_id, self.access_token])

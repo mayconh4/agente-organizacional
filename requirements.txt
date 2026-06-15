@@ -6,3 +6,7 @@ requests>=2.31
 
 # Carregamento de credenciais a partir do arquivo .env
 python-dotenv>=1.0
+
+# Backend web / app (Hugging Face Space)
+fastapi>=0.110
+uvicorn[standard]>=0.29

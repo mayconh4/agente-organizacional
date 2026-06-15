@@ -1,0 +1,35 @@
+name: Deploy Hugging Face Space
+
+# Publica o app (backend + front glass) num Space Docker do Hugging Face.
+# Pré-requisitos (uma vez):
+#   - Criar um Space Docker (privado) em huggingface.co/new-space
+#   - GitHub > Settings > Secrets and variables > Actions:
+#       secret  HF_TOKEN  = token de escrita (huggingface.co/settings/tokens)
+#       variable HF_SPACE = "SeuUsuario/nome-do-space" (ex.: Maycaco/salesops-ai)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, "claude/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.HF_SPACE != '' }}   # só roda depois de configurar o HF_SPACE
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push para o Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE: ${{ vars.HF_SPACE }}
+        run: |
+          OWNER="${HF_SPACE%%/*}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git push --force \
+            "https://${OWNER}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}.git" \
+            HEAD:main

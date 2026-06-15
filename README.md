@@ -1,3 +1,13 @@
+---
+title: SalesOps AI
+emoji: 📊
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # SalesOps AI — Agente de Operações Comerciais Multicanal
 
 Um **COO digital** para operações de e-commerce: monitora suas lojas em
@@ -106,6 +116,45 @@ Sem credenciais, ele publica com **dados de exemplo**; com credenciais, com
 > Por que não roda 100% no Pages como o outro site? Porque este agente precisa
 > de um backend (Python) e de chaves secretas — que não podem ficar no
 > navegador. O GitHub Actions faz o papel desse backend e publica o resultado.
+
+---
+
+## App completo com painel glass (Hugging Face Spaces)
+
+Além do painel estático, o projeto inclui um **app full-stack** (backend FastAPI
++ front *glassmorphism*) onde você **cadastra cada loja com a API dela**, com
+**uma aba por loja** e **dados reais**. Como precisa de backend (guardar
+credenciais e chamar as APIs com segurança), ele **não roda no GitHub Pages** —
+roda num **Hugging Face Space (Docker)**.
+
+### Rodar localmente
+
+```bash
+pip install -r requirements.txt
+uvicorn server.app:app --reload --port 8000
+# abra http://localhost:8000
+```
+
+Na tela: **➕ Nova loja** → escolha o marketplace → preencha os campos de API →
+salvar. Cada loja vira uma aba com seu dashboard (saúde, alertas, oportunidades,
+ações e métricas) e um botão **🧠 Relatório** (diagnóstico do Claude).
+
+### Publicar no Hugging Face Spaces
+
+1. Crie um Space em **https://huggingface.co/new-space**: SDK **Docker**, em
+   branco, **Private** (recomendado, pois guarda credenciais).
+2. Crie um token de escrita em **https://huggingface.co/settings/tokens**.
+3. No GitHub: **Settings → Secrets and variables → Actions**:
+   - *Secret* `HF_TOKEN` = o token.
+   - *Variable* `HF_SPACE` = `SeuUsuario/nome-do-space` (ex.: `Maycaco/salesops-ai`).
+4. O workflow `.github/workflows/hf-space.yml` publica o app no Space (a cada
+   push ou via **Actions → Run workflow**).
+5. *(Opcional)* No Space, em **Settings**: adicione o *secret* `ANTHROPIC_API_KEY`
+   (para os relatórios do Claude) e habilite **Persistent storage** com
+   `SALESOPS_STORE_FILE=/data/stores.json` para manter as lojas entre reinícios.
+
+> As credenciais das lojas ficam **no servidor** (no Space), nunca no navegador
+> nem no repositório (`data/` é ignorado pelo git).
 
 ---
 

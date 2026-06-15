@@ -26,14 +26,21 @@ TIMEOUT = 30
 class AmazonConnector(Connector):
     channel = "amazon"
 
-    def __init__(self) -> None:
-        self.client_id = os.getenv("AMAZON_LWA_CLIENT_ID", "").strip()
-        self.client_secret = os.getenv("AMAZON_LWA_CLIENT_SECRET", "").strip()
-        self.refresh_token = os.getenv("AMAZON_REFRESH_TOKEN", "").strip()
-        self.endpoint = os.getenv(
+    def __init__(self, lwa_client_id: str | None = None,
+                 lwa_client_secret: str | None = None,
+                 refresh_token: str | None = None,
+                 spapi_endpoint: str | None = None,
+                 marketplace_id: str | None = None) -> None:
+        self.client_id = (lwa_client_id or os.getenv("AMAZON_LWA_CLIENT_ID", "")).strip()
+        self.client_secret = (lwa_client_secret
+                              or os.getenv("AMAZON_LWA_CLIENT_SECRET", "")).strip()
+        self.refresh_token = (refresh_token
+                             or os.getenv("AMAZON_REFRESH_TOKEN", "")).strip()
+        self.endpoint = (spapi_endpoint or os.getenv(
             "AMAZON_SPAPI_ENDPOINT", "https://sellingpartnerapi-na.amazon.com"
-        ).strip()
-        self.marketplace_id = os.getenv("AMAZON_MARKETPLACE_ID", "A2Q3Y263D00KWC").strip()
+        )).strip()
+        self.marketplace_id = (marketplace_id
+                              or os.getenv("AMAZON_MARKETPLACE_ID", "A2Q3Y263D00KWC")).strip()
         self._access_token: str | None = None
         self._token_expiry: float = 0.0
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SalesOps AI — Operações Multicanal</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <span class="logo">📊</span>
+      <div>
+        <h1>SalesOps AI</h1>
+        <p class="tagline">Operações comerciais multicanal</p>
+      </div>
+    </div>
+    <div class="brand-meta" id="brand-meta"></div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <main id="view"></main>
+
+  <!-- Template: dashboard de uma loja -->
+  <template id="tpl-store">
+    <section class="store-head">
+      <div class="store-title">
+        <h2 data-bind="name"></h2>
+        <span class="chip" data-bind="channel"></span>
+        <span class="muted" data-bind="updated"></span>
+      </div>
+      <div class="store-actions">
+        <button class="btn ghost" data-act="report">🧠 Relatório</button>
+        <button class="btn ghost" data-act="edit">⚙️ Credenciais</button>
+        <button class="btn danger" data-act="delete">🗑️ Remover</button>
+      </div>
+    </section>
+    <div data-bind="body"></div>
+  </template>
+
+  <!-- Template: formulário de loja (nova / editar credenciais) -->
+  <template id="tpl-form">
+    <section class="panel glass form-panel">
+      <h2 data-bind="title">Nova loja</h2>
+      <p class="muted" data-bind="subtitle">
+        Cadastre a loja e as credenciais da API do marketplace.
+      </p>
+      <form id="store-form">
+        <label class="field" data-bind="name-field">
+          <span>Nome da loja</span>
+          <input name="name" placeholder="Ex.: Minha Loja Shopee" required />
+        </label>
+        <label class="field" data-bind="channel-field">
+          <span>Marketplace</span>
+          <select name="channel" id="channel-select"></select>
+        </label>
+        <div id="cred-fields" class="cred-fields"></div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary" data-bind="submit">Salvar loja</button>
+          <span class="form-msg" id="form-msg"></span>
+        </div>
+      </form>
+      <p class="hint">
+        🔒 As credenciais ficam no servidor (use um Space privado). Gere os tokens
+        no portal de desenvolvedor de cada marketplace.
+      </p>
+    </section>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>
